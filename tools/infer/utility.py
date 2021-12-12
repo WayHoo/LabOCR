@@ -15,7 +15,7 @@ def str2bool(v):
 def init_args():
     parser = argparse.ArgumentParser()
     # personalize settings
-    base_path = 'batch_001/'
+    base_path = 'sp/'
     parser.add_argument("--save_path", type=str, default='./inference_results/test_sheets/'+base_path)
 
     # params for prediction engine
@@ -316,7 +316,7 @@ def draw_ocr(image, boxes, txts=None, scores=None, drop_score=0.5, font_path="./
     return image
 
 
-def draw_ocr_box_txt(image, boxes, txts, scores=None, drop_score=0.5, font_path="./doc/fonts/simfang.ttf"):
+def draw_ocr_box_txt(image, boxes, txts, scores=None, drop_score=0.5, font_path="./doc/fonts/simfang.ttf", specify_color=None):
     h, w = image.height, image.width
     img_left = image.copy()
     img_right = Image.new('RGB', (w, h), (255, 255, 255))
@@ -330,7 +330,7 @@ def draw_ocr_box_txt(image, boxes, txts, scores=None, drop_score=0.5, font_path=
         if scores is not None and scores[idx] < drop_score:
             continue
         color = (random.randint(0, 255), random.randint(0, 255),
-                 random.randint(0, 255))
+                random.randint(0, 255)) if specify_color is None else specify_color
         draw_left.polygon(box, fill=color)
         draw_right.polygon(
             [

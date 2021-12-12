@@ -141,12 +141,12 @@ class TextDetector(object):
 
 if __name__ == "__main__":
     args = utility.parse_args()
-    args.image_dir = "./doc/test_sheets/"
+    args.image_dir = "./doc/test_sheets/batch_002/test_sheet (18).jpg"
     image_file_list = get_image_file_list(args.image_dir)
     text_detector = TextDetector(args)
     count = 0
     total_time = 0
-    draw_img_save = "./inference_results"
+    draw_img_save = "./inference_results/det/"
 
     if args.warmup:
         img = np.random.uniform(0, 255, [640, 640, 3]).astype(np.uint8)

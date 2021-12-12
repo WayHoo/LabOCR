@@ -169,7 +169,7 @@ def main(args):
                 boxes = dt_boxes
                 txts = [rec_res[i][0] for i in range(len(rec_res))]
                 scores = [rec_res[i][1] for i in range(len(rec_res))]
-
+                # specify the draw color (221, 77, 102)
                 draw_img = draw_ocr_box_txt(image, boxes, txts, scores, 
                     drop_score=drop_score, font_path=font_path)
                 draw_img_save = args.save_path

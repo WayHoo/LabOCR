@@ -191,7 +191,7 @@ def get_item_span(source, target):
 if __name__ == "__main__":
     items = ["12申该细胞绝对值（镜检）1.3umol/L", "杭HBS抗体", "RDW-SD红细胞平均宽度", 
              "百细胞", "红细胞平均宽度RDW-SD", "葡萄糖（U_GLU）", "真菌（C.vini）", 
-             "白细胞（镜检）(RBC)"]
+             "白细胞（镜检）(RBC)", "2哄细胞", "16中型细胞数", "6肌肝（CR）"]
     for item in items:
         res = single_correct(item, "item")
         print("item correct: [%s] -> %s" % (item, res))
